@@ -2,13 +2,38 @@
 
 此模块用于快速批量生成 随机Dummy数据的 xlsx文件
 
-此模块 需要输入，
+使用此模块需要了解以下几个概念
+
+**输入**
 
 * 模板xlsx路径，
 * 字典文件路径，
 * 输出Dummy xlsx文件的路径，数量，sheet属性
 
+**输出** 
 
+ 若干个 随机数据的 xlsx 文件
+
+**随机数据来源**
+
+* chance.js 制造， http://chancejs.com/
+* 字典文件中 定义 取值范围数组
+* 字典文件中可以填写 chance 语句
+
+**模板xlsx**
+
+一个xlsx文件，
+
+通过 批注 确定循环 单元格 及 循环次数，
+通过 单元格内容 确定 其中填充的内容，
+
+单元格内容 包含 $$ 则视为代码，通过 eval 执行，否则 不视为代码
+
+**config**
+
+每个config 对象，指定了 **一个模板文件** 所需的所有输入，
+
+每次 开始生成数据文件 前，可通过 程序直接添加多个config对象，也可以指定 写有 config 的 JSON文件
 
 ## Getting start
 
@@ -34,7 +59,7 @@ Then `require` and use it in your code:
 
   * "exportFileSheets":{//导出文件sheet属性：
 
-    * "订单表":{
+    * <模板文件原sheet名："订单表">:{
 
       * "toSheets":["订单1","订单2","订单3"], // 目标sheet
       * "pick":{"min":1,"max":3}，// 随机sheet数
@@ -44,11 +69,13 @@ Then `require` and use it in your code:
 ```
 var dummy_xlsx=require("dummy._xlsx");
 
-// 添加配置文件
+// 添加配置文件， 可以是单个配置文件，也可以是 配置文件路径集合数组
+// 配置文件中的 json 对象，可以是单个 config 对象，也可以是 config对象数组
  dummy_xlsx.addConfigsFromFiles("./profile.json");
 
-或者 直接添加 config
-addConfigs({...})
+或者 直接添加 config 对象
+可以是单个 config 对象，也可以是 config 对象数组
+dummy_xlsx.addConfigs({...})
 
 // 开始 生成 数据 文件
 dummy_xlsx.doDummy();
@@ -58,6 +85,13 @@ dummy_xlsx.doDummy();
 
 
 **listener**
+
+执行 dummy_xlsx.doDummy() 之前，
+
+增加这些代码可以帮助你
+
+* 了解具体执行步骤
+* 捕获错误
 
 ```
 dummy_xlsx
