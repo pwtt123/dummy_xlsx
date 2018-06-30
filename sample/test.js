@@ -1,4 +1,7 @@
  var dummy_xlsx=require("../dummy_xlsx.js");
+ var fs=require("fs");
+
+ try {fs.mkdirSync("./export")}catch(err){};
 
  dummy_xlsx.addConfigsFromFiles("./profile.json");
  console.log("configList",dummy_xlsx.configList);
