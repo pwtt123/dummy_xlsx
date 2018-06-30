@@ -1,0 +1,31 @@
+{
+  "name": "dummy_xlsx",
+  "version": "1.0.0",
+  "description": "help you make dummy xlsx files quickly",
+  "main": "dummy._xlsx.js",
+  "dependencies": {
+    "chance": "^1.0.16",
+    "thenjs": "^2.1.0",
+    "underscore": "^1.9.0",
+    "xlsx": "^0.13.0",
+    "xlsx-style": "^0.8.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwtt123/dummy-xlsx.git"
+  },
+  "keywords": [
+    "dummy",
+    "xlsx"
+  ],
+  "author": "pwt123",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pwtt123/dummy-xlsx/issues"
+  },
+  "homepage": "https://github.com/pwtt123/dummy-xlsx#readme"
+}

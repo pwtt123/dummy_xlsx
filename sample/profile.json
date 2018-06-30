@@ -1,0 +1,14 @@
+﻿[{"templateFilePath":"./source.xlsx",
+"dictFilePaths":["dicts/dict1.json","dicts/dict公司.json","dicts/dict地址.json","dicts/dict名称.json","dicts/dict商品.json"],
+"options":{
+	"exportFilesNum":5,
+	"exportFilePaths":["export/export1#test.xlsx","export/export2#test.xlsx","export/export3#test.xlsx","export/export4#test.xlsx","export/export5#test.xlsx"],
+	"exportFileSheets":{"企业基本信息1":{"toSheets":["企业基本信息1","企业基本信息2","企业基本信息3","企业基本信息4","企业基本信息5"],
+					     "pick":{"min":2,"max":5}
+					     },
+			     "利润表":{"toSheets":["利润表1","利润表2","利润表3"]},
+ 			     "订单表":{"toSheets":["订单表1","订单表2","订单表3"]}
+			    }
+	 }
+ }]
+
