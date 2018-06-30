@@ -1,4 +1,4 @@
- var dummy_xlsx=require("../dummy._xlsx.js");
+ var dummy_xlsx=require("../dummy_xlsx.js");
 
  dummy_xlsx.addConfigsFromFiles("./profile.json");
  console.log("configList",dummy_xlsx.configList);

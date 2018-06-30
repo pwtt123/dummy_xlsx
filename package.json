@@ -1,8 +1,8 @@
 {
   "name": "dummy_xlsx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "help you make dummy xlsx files quickly",
-  "main": "dummy._xlsx.js",
+  "main": "dummy_xlsx.js",
   "dependencies": {
     "chance": "^1.0.16",
     "thenjs": "^2.1.0",
